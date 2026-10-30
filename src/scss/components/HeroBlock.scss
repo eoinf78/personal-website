@@ -1,0 +1,60 @@
+@use '../colors.scss';
+@use '../functions' as *;
+
+.HeroBlock {
+  padding-top: space(14);
+
+  .Block__container {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &__actions {
+    display: flex;
+    gap: space(6);
+    margin-top: space(11);
+  }
+
+  &__content {
+    max-width: 650px;
+    width: 100%;
+    z-index: 1;
+
+    p {
+      display: inline-block;
+      font-size: font('lead');
+      margin-top: space(11);
+    }
+  }
+
+  &__fileInfo {
+    color: colors.$color-text-subtle;
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: font('xs');
+    margin-top: space(11);
+  }
+
+  &__sphere {
+    display: none;
+    position: absolute;
+    right: 0;
+    @include breakpoint('tablet') {
+      aspect-ratio: 1 / 1;
+      display: block;
+      width: 60%;
+    }
+  }
+
+  &__tag {
+    color: colors.$color-accent;
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: font('xs');
+    margin-bottom: space(11);
+  }
+
+  span.--highlight {
+    color: colors.$color-accent;
+  }
+}

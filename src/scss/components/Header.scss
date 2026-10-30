@@ -1,0 +1,34 @@
+@use '../colors';
+@use '../fonts';
+@use '../functions' as *;
+
+.Header {
+  padding: space(8);
+
+  &__logo {
+    color: colors.$color-text;
+    font-family: var(--font-mono);
+
+    span {
+      color: colors.$color-accent;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    justify-content: space-between;
+
+    &Items {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.5rem;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,52 @@
+@use '../breakpoints';
+@use '../colors';
+@use '../functions' as *;
+
+.Block {
+  border-top: 1px solid colors.$color-border;
+  display: flex;
+  flex-direction: column;
+  padding-top: space(10);
+  padding-bottom: space(10);
+  position: relative;
+  width: 100%;
+  @include breakpoint('tablet') {
+    padding-top: space(14);
+    padding-bottom: space(14);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 space(8);
+    position: relative;
+    width: 100%;
+    @include breakpoint('tablet') {
+      padding: 0 space(9);
+    }
+    @include breakpoint('desktop') {
+      margin: 0 auto;
+      max-width: min(1280px, 100% - 80px);
+      padding: 0;
+    }
+    @include breakpoint('desktop-large') {
+      max-width: 1280px;
+      padding: 0;
+    }
+  }
+
+  .Block.--has-bg + &:not(.--has-bg) {
+    margin-top: space(10);
+    @include breakpoint('tablet') {
+      margin-top: space(12);
+    }
+  }
+
+  .Block:not(.--has-bg) + & {
+    margin-top: space(10);
+    @include breakpoint('tablet') {
+      margin-top: space(12);
+    }
+  }
+}

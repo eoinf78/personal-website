@@ -1,0 +1,38 @@
+@use 'sass:map';
+@use './spacing.scss';
+@use './breakpoints';
+@use './fonts';
+
+@function space($key) {
+  @if not map.has-key(spacing.$spacers, $key) {
+    @error "No spacer named #{$key}. Available: #{map.keys(spacing.$spacers)}";
+  }
+  @return map.get(spacing.$spacers, $key);
+}
+
+@function font($key) {
+  @if not map.has-key(fonts.$font-sizes, $key) {
+    @error "No spacer named #{$key}. Available: #{map.keys(fonts.$font-sizes)}";
+  }
+  @return map.get(fonts.$font-sizes, $key);
+}
+
+@mixin breakpoint($breakpoint: '') {
+  @if $breakpoint == 'mobile' {
+    @media (min-width: breakpoints.$mobile) {
+      @content;
+    }
+  } @else if $breakpoint == 'tablet' {
+    @media (min-width: breakpoints.$tablet) {
+      @content;
+    }
+  } @else if $breakpoint == 'desktop' {
+    @media (min-width: breakpoints.$desktop) {
+      @content;
+    }
+  } @else if $breakpoint == 'desktop-large' {
+    @media (min-width: breakpoints.$desktop-large) {
+      @content;
+    }
+  }
+}

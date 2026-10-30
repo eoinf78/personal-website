@@ -1,0 +1,65 @@
+
+// -----------------------------------------------------------------------------
+// Font families
+// -----------------------------------------------------------------------------
+$font-sans: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+$font-body:    $font-sans;
+$font-heading: $font-sans;
+$font-label:   $font-mono;   // logo, eyebrow, badges, meta, footer
+
+
+// -----------------------------------------------------------------------------
+// Font weights
+// -----------------------------------------------------------------------------
+$font-weight-regular: 400;
+$font-weight-medium:  500;
+$font-weight-bold:    700;
+
+// -----------------------------------------------------------------------------
+// Font sizes
+// -----------------------------------------------------------------------------
+
+// Fluid heading sizes (min, preferred, max)
+$font-size-h1:       clamp(2.5rem, 6vw, 4.75rem);    // hero headline
+$font-size-display:  clamp(2rem, 5vw, 3.5rem);       // "Let's build something together."
+$font-size-h2:       clamp(1.75rem, 3.5vw, 2.5rem);  // section titles
+$font-size-h3:       1.35rem;                        // skill card titles
+$font-size-h4:       1.4rem;                         // project names
+
+// Body and UI sizes
+$font-size-lead:     1.2rem;    // hero intro paragraph
+$font-size-lg:       1.1rem;    // contact intro paragraph
+$font-size-base:     1rem;      // buttons, default body
+$font-size-sm:       0.95rem;   // nav links, card descriptions
+$font-size-pill:     0.9rem;    // skill pills
+$font-size-xs:       0.875rem;  // hero eyebrow
+$font-size-meta:     0.85rem;   // section meta, tech stacks
+$font-size-xxs:      0.8rem;    // badges, CV file info, footer
+
+// Map version, handy for loops / utility classes
+$font-sizes: (
+  'h1':      $font-size-h1,
+  'display': $font-size-display,
+  'h2':      $font-size-h2,
+  'h3':      $font-size-h3,
+  'h4':      $font-size-h4,
+  'lead':    $font-size-lead,
+  'lg':      $font-size-lg,
+  'base':    $font-size-base,
+  'sm':      $font-size-sm,
+  'xs':      $font-size-xs,
+  'xxs':     $font-size-xxs,
+);
+
+// -----------------------------------------------------------------------------
+// Line heights
+// -----------------------------------------------------------------------------
+$line-height-base:    1.6;    // body text
+$line-height-heading: 1.05;   // hero h1
+$line-height-display: 1.1;    // contact display heading
+
+$letter-spacing-tight:   -0.02em;  // h1, display
+$letter-spacing-snug:    -0.01em;  // h2
+$letter-spacing-normal:  0;

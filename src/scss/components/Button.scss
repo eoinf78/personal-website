@@ -1,0 +1,64 @@
+@use '../breakpoints';
+@use '../colors';
+@use '../fonts';
+@use '../functions' as *;
+
+ .Button {
+  $block: &;
+  align-items: stretch;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 52px;
+  padding: 8px 24px;
+  position: relative;
+  text-decoration: none;
+
+  &.--primary {
+    background-color: colors.$color-accent;
+  }
+
+  &.--outline {
+    border: 1px solid colors.$color-border-strong;
+    color: colors.$color-text;
+  }
+
+  &.--small {
+    padding: 4px 16px;
+    min-height: 44px;
+  }
+
+  &__label {
+    align-items: center;
+    display: inline-flex;
+    font-family: var(--font-body);
+    font-size: font('sm');
+    font-weight: fonts.$font-weight-bold;
+    gap: space(3);
+    text-decoration: none;    
+
+    #{$block}.--text & {
+      text-decoration: underline;
+
+      .Icon {
+        &.--fill path {
+          fill: currentColor;
+        }
+
+        &.--stroke path {
+          stroke: currentColor;
+        }
+      }
+    }
+
+    #{$block} & {
+      .Icon {
+        height: 18px;
+        stroke: currentColor;
+        width: 18px;
+      }
+    }
+  }
+ }

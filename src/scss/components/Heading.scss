@@ -1,0 +1,29 @@
+@use '../colors';
+@use '../fonts';
+@use '../functions' as *;
+
+.Heading {
+  color: colors.$color-text;
+  font-weight: 700;
+  letter-spacing: fonts.$letter-spacing-normal;
+
+  &.--size-hero {
+    font-size: font('h1');
+    line-height: fonts.$line-height-heading;
+    letter-spacing: fonts.$letter-spacing-tight;
+  }
+
+  &.--size-display {
+    font-size: font('display');
+    letter-spacing: fonts.$letter-spacing-tight;
+  }
+
+  &.--size-section {
+    font-size: font('h2');
+    letter-spacing: fonts.$letter-spacing-snug;
+  }
+
+  &.--size-card {
+    font-size: font('h3');
+  }
+}

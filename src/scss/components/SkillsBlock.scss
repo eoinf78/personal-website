@@ -1,0 +1,64 @@
+@use '../colors.scss';
+@use '../functions' as *;
+
+.SkillsBlock {
+  &__card {
+    background: colors.$color-surface;
+    border: 1px solid colors.$color-border;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: space(6);
+    padding: space(9);
+
+    &:hover {
+      border-color: colors.$color-accent;
+      cursor: pointer;
+    }
+
+    .Heading {
+      font-weight: 700;
+    }
+
+    span.--highlight {
+      color: colors.$color-accent;
+      font-family: var(--font-mono);
+      font-size: font('xs');
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: space(8);
+    grid-template-columns: 1fr;
+    margin-top: space(11);
+    @include breakpoint('mobile') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint('tablet') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__tags {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: space(5);
+    margin-top: space(12);
+
+    span.--tag {
+      border: 1px solid colors.$color-border;
+      border-radius: space(8);
+      color: colors.$color-text;
+      font-size: font('xs');
+      padding: space(2) space(3);
+
+      &:hover {
+        border-color: colors.$color-accent;
+        color: colors.$color-accent;
+        cursor: pointer;
+      }
+    }
+  }
+}

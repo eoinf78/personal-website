@@ -1,0 +1,29 @@
+// Backgrounds and surfaces
+$color-bg:              #101214;   // page background
+$color-surface:         #171A1D;   // skill cards
+$color-surface-raised:  #23262A;   // number badges on cards
+
+// Borders and dividers
+$color-border:          #23262A;   // section dividers, card borders, header line
+$color-border-soft:     #2E3237;   // "Also" skill pills
+$color-border-strong:   #3A3E44;   // outline buttons (CV in nav, "Get in touch")
+
+// Text
+$color-text:            #ECEDE8;   // headings and main text
+$color-text-hover:      #FFFFFF;   // link hover
+$color-text-muted:      #A9ADA6;   // body copy, nav links, descriptions
+$color-text-subtle:     #8C918A;   // meta text, footer, tech stacks
+$color-text-pill:       #C9CCC5;   // text inside skill pills
+
+// Accent (switchable – the design offered these four)
+$accent-lime:           #B8F25C;
+$accent-blue:           #6CC4FF;
+$accent-orange:         #FFB15C;
+$accent-purple:         #C9A6FF;
+
+$color-accent:          $accent-lime;
+$color-on-accent:       #101214;   // text on accent buttons
+
+// Inverted button (email button in contact section)
+$color-inverse-bg:      $color-text;
+$color-inverse-text:    $color-bg;

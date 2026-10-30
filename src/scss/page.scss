@@ -1,0 +1,75 @@
+@forward './reset.scss';
+@forward './components.scss';
+@use './colors';
+@use './fonts';
+@use './functions' as *;
+@use './spacing';
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  &.--disableScroll {
+    overflow: hidden;
+  }
+}
+
+body {
+  background-color: colors.$color-bg;
+  color: colors.$color-text-muted;
+  font-family: var(--font-body);
+  font-weight: fonts.$font-weight-medium;
+  line-height: fonts.$line-height-base;
+  overflow-x: hidden;
+  font-size: font('base');
+
+  &.--disableScroll {
+    overflow: hidden;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  width: fit-content;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: fonts.$font-body;
+  font-weight: normal;
+}
+
+input {
+  font-family: fonts.$font-body;
+}
+
+picture img, img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+em {
+  font-style: italic;
+}
+
+p:empty {
+  display: none;
+}
+
+pre {
+  overflow: hidden;
+}
+
+strong {
+  font-weight: bold;
+}
