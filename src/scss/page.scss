@@ -7,11 +7,6 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
-
-  &.--disableScroll {
-    overflow: hidden;
-  }
 }
 
 body {
@@ -20,11 +15,53 @@ body {
   font-family: var(--font-body);
   font-weight: fonts.$font-weight-medium;
   line-height: fonts.$line-height-base;
-  overflow-x: hidden;
   font-size: font('base');
 
   &.--disableScroll {
     overflow: hidden;
+  }
+
+  &.--scrolled .Header {
+    animation: Header-slideDown 0.3s ease-out;
+    border-bottom: 1px solid colors.$color-border;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  &.--scrolled .BackToTop {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 600px) {
+    .BackToTop {
+      --footer-height: 6.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .BackToTop {
+      transition: none;
+    }
+  }
+}
+
+@keyframes Header-slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.scrolled .Header {
+    animation: none;
   }
 }
 
@@ -40,6 +77,7 @@ a {
   cursor: pointer;
   display: flex;
   gap: 8px;
+  text-decoration: none;
   width: fit-content;
 
   &:hover {

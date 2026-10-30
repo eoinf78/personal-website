@@ -3,6 +3,7 @@
 @use '../functions' as *;
 
 .Header {
+  background-color: colors.$color-bg;
   padding: space(8);
 
   &__logo {
@@ -26,6 +27,21 @@
       flex-wrap: wrap;
       gap: 0.25rem 1.5rem;
     }
+  }
+
+  &__sentinel {
+    height: 1px;
+    margin-top: -1px;
+    pointer-events: none;
+  }
+
+  &__topSentinel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
   }
 
   a {

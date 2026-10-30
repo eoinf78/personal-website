@@ -17,8 +17,16 @@
 
   &__actions {
     display: flex;
+    flex-wrap: wrap;
     gap: space(6);
     margin-top: space(11);
+
+    a, button {
+      width: 100%;
+      @include breakpoint('mobile') {
+        width: auto
+      }
+    } 
   }
 
   &__container {

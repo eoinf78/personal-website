@@ -1,9 +1,18 @@
-import { ContactBlock, SkillsBlock } from '@/components';
-import { Header } from '@/components/Header';
-import { HeroBlock } from '@/components';
 import '@/scss/page.scss';
+import { BackToTop, ContactBlock, SkillsBlock } from '@/components';
+import { HeroBlock } from '@/components';
+import { Header } from '@/components/Header';
+import Footer from '@/components/Footer';
+import { cacheLife } from "next/cache";
 
-export default function Home() {
+async function getCurrentYear() {
+  "use cache";
+  cacheLife("days");
+  return new Date().getFullYear();
+}
+
+export default async function Home() {
+  const currentYear = await getCurrentYear();
   return <>
     <Header/>
     <main className="main" id="top">
@@ -11,6 +20,7 @@ export default function Home() {
       <SkillsBlock/>
       <ContactBlock/>
     </main>
-    {/* Footer */}
+    <Footer year={currentYear}/>
+    <BackToTop/>
   </>;
 }

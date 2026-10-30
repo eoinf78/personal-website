@@ -1,3 +1,5 @@
+export {AnchorLink} from './AnchorLink';
+export {BackToTop} from './BackToTop';
 export {Button} from './Button';
 export {DownloadButton} from './DownloadButton';
 export {Heading} from './Heading';
