@@ -16,11 +16,15 @@
   &.--size-display {
     font-size: font('display');
     letter-spacing: fonts.$letter-spacing-tight;
+    line-height: 1.1;
+    max-width: 16ch;
   }
 
   &.--size-section {
     font-size: font('h2');
     letter-spacing: fonts.$letter-spacing-snug;
+    line-height: 1.1;
+    max-width: 16ch;
   }
 
   &.--size-card {

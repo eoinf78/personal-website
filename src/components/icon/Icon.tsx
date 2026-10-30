@@ -10,10 +10,12 @@ interface IconProps {
   size?: 'small' | 'medium' | 'large';
   /** The color variant of the icon. */
   color?: 'primary' | 'secondary';
+  /** Setting the stroke or fill of the SVG */
+  style?: 'stroke' | 'fill';
 }
 
-export const Icon: FC<IconProps> = ({name, size = 'medium', color}) => {
-  return <span className={`Icon --${size} --color-${color}`}>
+export const Icon: FC<IconProps> = ({name, size = 'medium', color, style = 'stroke'}) => {
+  return <span className={`Icon --${size}${color ? ` --color-${color}` : ''} --${style}`}>
     <BaseIcon name={name} />
   </span>
 }

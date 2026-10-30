@@ -9,12 +9,6 @@
     flex-direction: row;
   }
 
-  &__actions {
-    display: flex;
-    gap: space(6);
-    margin-top: space(11);
-  }
-
   &__content {
     max-width: 650px;
     width: 100%;

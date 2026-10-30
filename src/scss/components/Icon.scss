@@ -1,0 +1,42 @@
+@use '../colors';
+
+.Icon {
+  height: 24px;
+  width: 24px;
+    
+  &.--color-primary {
+    color: colors.$color-text-subtle;
+  }
+    
+  &.--color-secondary {
+    color: colors.$color-on-accent;
+  }
+
+  &.--small {
+    width: 18px;
+    height: 18px;
+  }
+
+  &.--large {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.--fill svg {
+    fill: currentColor;
+  }
+
+  &.--stroke {
+    svg {
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2px;
+    }
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}

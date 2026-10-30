@@ -35,9 +35,17 @@ main {
 }
 
 a {
+  align-items: center;
   color: inherit;
   cursor: pointer;
+  display: flex;
+  gap: 8px;
   width: fit-content;
+
+  &:hover {
+    color: colors.$color-accent;
+    text-decoration: underline;
+  }
 }
 
 button {

@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes } from 'react';
 import { ICON_MAP, Icon } from './icon';
 
 type ButtonProps = AsChildProps<ButtonHTMLAttributes<HTMLButtonElement>> & {
-  variant?: 'primary' | 'text' | 'outline';
+  variant?: 'primary' | 'secondary' | 'text' | 'outline';
   size?: 'small' | 'medium' | 'large';
   className?: string;
   icon?:  keyof typeof ICON_MAP;
@@ -11,22 +11,23 @@ type ButtonProps = AsChildProps<ButtonHTMLAttributes<HTMLButtonElement>> & {
 
 export const Button = ({ 
   asChild = false,
+  className,
   icon,
   size = 'medium',
   variant = 'primary',
   ...props 
 }: ButtonProps) => {
-  const Comp = asChild ? Slot : "button"
-  
+  const classes = ['Button', `--${variant}`, `--${size}`, className ?? '']
+    .filter(Boolean)
+    .join(' ');
 
   if (asChild) {
-    console.log(props);
-    return <Slot {...props}>
+    return <Slot {...props} className={classes}>
       {props.children}
     </Slot>
   }
 
-  return <button {...props} className={`Button --${variant} --${size}`} type='button'>
+  return <button {...props} className={classes} type='button'>
     <span className="Button__label">
       {icon && <Icon name={icon} size="small"/>}
       {props.children}

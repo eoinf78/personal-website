@@ -1,8 +1,14 @@
-import DownloadIcon from '@/components/icon/assets/download.svg';
+import DownloadIcon from './assets/download.svg';
+import EmailIcon from './assets/email.svg';
+import GithubIcon from './assets/github.svg';
+import LinkedInIcon from './assets/linkedin.svg';
 import {FC} from 'react';
 
 export const ICON_MAP = {
   'download': DownloadIcon,
+  'email': EmailIcon,
+  'github': GithubIcon,
+  'linkedin': LinkedInIcon
 }
 
 interface BaseIconProps {

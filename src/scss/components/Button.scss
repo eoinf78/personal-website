@@ -20,6 +20,12 @@
     background-color: colors.$color-accent;
   }
 
+  &.--secondary {
+    background-color: colors.$color-text;
+    border-color: colors.$color-text;
+    color: colors.$color-bg
+  }
+
   &.--outline {
     border: 1px solid colors.$color-border-strong;
     color: colors.$color-text;
@@ -43,11 +49,11 @@
       text-decoration: underline;
 
       .Icon {
-        &.--fill path {
+        &.--fill svg {
           fill: currentColor;
         }
 
-        &.--stroke path {
+        &.--stroke svg {
           stroke: currentColor;
         }
       }
