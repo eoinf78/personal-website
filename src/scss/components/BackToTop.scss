@@ -27,4 +27,10 @@
     opacity 0.3s ease,
     transform 0.3s ease,
     visibility 0.3s;
+
+  &:focus-visible,
+  &:hover {
+    outline: 1px solid colors.$color-accent;
+    outline-offset: 2px;
+  }
 }

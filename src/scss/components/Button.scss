@@ -16,19 +16,52 @@
   position: relative;
   text-decoration: none;
 
+  a & {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
   &.--primary {
+    color: colors.$color-bg;
     background-color: colors.$color-accent;
+    border-color: colors.$color-accent;
+  
+    &:focus-visible,
+    &:hover {
+      outline: 1px solid;
+      outline-color: colors.$color-accent;
+      outline-offset: 2px;
+    }
   }
 
   &.--secondary {
     background-color: colors.$color-text;
     border-color: colors.$color-text;
-    color: colors.$color-bg
+    color: colors.$color-bg;
+  
+    &:focus-visible,
+    &:hover {
+      outline: 1px solid;
+      outline-color: colors.$color-text;
+      outline-offset: 2px;
+    }
   }
 
   &.--outline {
     border: 1px solid colors.$color-border-strong;
     color: colors.$color-text;
+
+    &:focus-visible,
+    &:hover {
+      border-color: colors.$color-accent;
+      color: colors.$color-accent;
+      outline: 1px solid;
+      outline-color: colors.$color-accent;
+      outline-offset: 2px;
+    }
   }
 
   &.--small {

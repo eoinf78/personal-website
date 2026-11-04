@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ReactElement } from "react";
 import { Button } from "./Button";
+import { Icon } from "./icon";
 
 export type DownloadButtonProps = {
   variant: 'primary' | 'text' | 'outline';
@@ -9,7 +10,9 @@ export type DownloadButtonProps = {
 }
 
 export const DownloadButton = ({fileName, size, variant}: DownloadButtonProps): ReactElement => {
-  return <Link href={`/files/${fileName}.pdf`} download={`${fileName}.pdf`}>
-    <Button variant={variant} icon='download' size={size}>{size === 'small' ? 'CV' : 'Download my CV'}</Button>
-  </Link>
+  return <Button asChild variant={variant} size={size}>
+    <Link href={`/files/${fileName}.pdf`} download={`${fileName}.pdf`}>
+      <span className="Button__label"><Icon name="download"/>{size === 'small' ? 'CV' : 'Download my CV'}</span>
+    </Link>
+  </Button>
 }

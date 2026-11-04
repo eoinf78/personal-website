@@ -13,9 +13,9 @@ export const BackToTop = (): ReactElement => {
       className="BackToTop"
       onClick={handleClick}
       aria-label="Back to top"
+      title="Back to top"
     >
       <span aria-hidden="true">↑</span>
-      {/* <span className="BackToTop__label">Back to top</span> */}
     </button>
   );
 };

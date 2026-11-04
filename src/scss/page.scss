@@ -77,12 +77,20 @@ a {
   cursor: pointer;
   display: flex;
   gap: 8px;
+  outline: none;
   text-decoration: none;
   width: fit-content;
 
   &:hover {
     color: colors.$color-accent;
     text-decoration: underline;
+  }
+
+  &:focus-visible {
+    color: colors.$color-accent;
+    outline: 1px solid;
+    outline-color: colors.$color-accent;
+    outline-offset: 2px;
   }
 }
 

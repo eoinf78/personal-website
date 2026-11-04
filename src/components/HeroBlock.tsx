@@ -6,7 +6,7 @@ export const HeroBlock = () => {
     <div className="Block__container">
       <div className="HeroBlock__content">
         <span className="HeroBlock__tag">// Software Developer · Front-end</span>
-        <h1 className="Heading --size-hero">Hi, I&apos;m <span className="--highlight">Eoin Fanning</span></h1>
+        <h1 className="Heading --size-hero"><span className="--highlight">Eoin Fanning</span></h1>
         <p>A front end developer with 15+ years building responsive, accessible and well-tested user interfaces. I specialise in React, Next.js and TypeScript, and I’m most interested in UI development, reusable component libraries and design systems that help teams ship consistent, high-quality products faster.</p>
         <div className='Block__actions'>
           <DownloadButton variant="primary" size="medium" fileName="EoinFanning_CV"/>
