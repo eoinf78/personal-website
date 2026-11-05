@@ -11,6 +11,7 @@
     font-size: font('h1');
     line-height: fonts.$line-height-heading;
     letter-spacing: fonts.$letter-spacing-tight;
+    margin-bottom: 0;
   }
 
   &.--size-display {

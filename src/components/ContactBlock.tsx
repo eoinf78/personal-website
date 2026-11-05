@@ -21,7 +21,7 @@ export const ContactBlock = () => {
         </Button>
         <DownloadButton variant="primary" size="medium" fileName="EoinFanning_CV"/>
       </div>
-      <div className="Block__actions">
+      <div className="Block__actions --inline">
         <Link target="_blank" href="https://github.com/eoinf78"><Icon name='github' style="fill" size="small"/>GitHub</Link>
         <span>|</span>
         <Link target="_blank" href="https://www.linkedin.com/in/eoinfanning/"><Icon name='linkedin' style="fill" size="small"/>LinkedIn</Link>

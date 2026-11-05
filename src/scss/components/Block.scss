@@ -21,12 +21,20 @@
     gap: space(6);
     margin-top: space(11);
 
+    &.--inline {
+      justify-content: flex-start;
+
+      a, button {
+        width: auto;
+      }
+    }
+
     a, button {
       width: 100%;
       @include breakpoint('mobile') {
         width: auto
       }
-    } 
+    }
   }
 
   &__container {
