@@ -1,5 +1,7 @@
+'use client';
+
 import { Slot, type AsChildProps } from './Slot';
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, MouseEventHandler } from 'react';
 import { ICON_MAP, Icon } from './icon';
 
 type ButtonProps = AsChildProps<ButtonHTMLAttributes<HTMLButtonElement>> & {
@@ -7,6 +9,7 @@ type ButtonProps = AsChildProps<ButtonHTMLAttributes<HTMLButtonElement>> & {
   size?: 'small' | 'medium' | 'large';
   className?: string;
   icon?:  keyof typeof ICON_MAP;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export const Button = ({ 
@@ -27,7 +30,7 @@ export const Button = ({
     </Slot>
   }
 
-  return <button {...props} className={classes} type='button'>
+  return <button {...props} className={classes} type='button' onClick={props.onClick}>
     <span className="Button__label">
       {icon && <Icon name={icon} size="small"/>}
       {props.children}

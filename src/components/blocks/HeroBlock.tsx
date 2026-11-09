@@ -1,8 +1,18 @@
+'use client';
+
 import { Button, DownloadButton, LiquidSphere } from '@/components';
-import Link from 'next/link';
 import { AnimatedSection } from './AnimatedSection';
+import { MouseEvent } from 'react';
 
 export const HeroBlock = () => {
+  const handleContactClick = (event: MouseEvent) => {
+    const target = document.getElementById('contact-container');
+    if (!target) return;
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return <AnimatedSection className="HeroBlock" id="about">
     <div className="Block__container">
       <div className="HeroBlock__content">
@@ -13,10 +23,8 @@ export const HeroBlock = () => {
         </div>
         <div className='Block__actions' data-animate="content">
           <DownloadButton variant="primary" size="medium" fileName="EoinFanning_CV"/>
-          <Button variant='outline' asChild className='Button --outline'>
-            <Link href="#contact-container">
-              <span className="Button__label">Get in touch</span>
-            </Link>
+          <Button variant='outline' className='Button --outline' onClick={handleContactClick}>
+            Get in touch
           </Button>
         </div>
         <span data-animate="content" className="HeroBlock__fileInfo">PDF · 190kb · updated October 2026</span>

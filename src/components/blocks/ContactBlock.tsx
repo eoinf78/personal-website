@@ -9,7 +9,7 @@ export const ContactBlock = () => {
     <div className="Block__container">
       <div data-animate="intro">
         <Heading size='display' level={2} text='Let&apos;s build something together.'/>
-        <p className="Block__body">Open to full-time, remote or roles. The quickest way to reach me is email.</p>
+        <p className="Block__body">Open to full-time, contract or remote roles. The quickest way to reach me is email.</p>
       </div>
       <div className='Block__actions' data-animate="content">
         <Button variant="secondary" asChild>
