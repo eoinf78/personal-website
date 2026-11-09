@@ -1,6 +1,7 @@
-import { grotesk, mono } from '@/lib/fonts'
+import { grotesk, mono } from '@/lib/fonts';
 
 import type { Metadata } from "next";
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: "Eoin Fanning",
@@ -16,9 +17,26 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${grotesk.variable} ${mono.variable}`}>
-      <body>{children}</body>
-    </html>
-  );
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
+  return <html lang="en" data-scroll-behavior="smooth" className={`${grotesk.variable} ${mono.variable}`}>
+      <body>
+        {children}
+        {gaId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtm.js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+              `}
+            </Script>
+          </>
+        )}  
+      </body>
+    </html>;
 }
