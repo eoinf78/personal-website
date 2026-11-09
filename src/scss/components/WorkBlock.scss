@@ -1,0 +1,96 @@
+@use '../colors';
+@use '../functions' as *;
+
+$dates-col: 11rem;
+
+.WorkBlock {
+  $block: &;
+
+  &__item {
+    background: #171a1d;
+    border: 1px solid #23262a;
+    border-radius: 14px;
+    margin-bottom: space(8);
+    padding: 1.5rem;
+
+    @include breakpoint('tablet') {
+      background: transparent;
+      border: none;
+      border-radius: unset;
+      display: grid;
+      grid-template-columns: $dates-col 1fr;
+      gap: space(12);
+      margin-bottom: 0;
+      padding: 0;
+
+      &:first-child #{$block}__itemBody:before {
+        background: colors.$color-accent;
+      }
+
+      &:last-child #{$block}__itemBody {
+        border-left-color: transparent;
+        padding-bottom: 0;
+      }
+    }
+
+    &Body {
+      position: relative;
+
+      @include breakpoint('tablet') {   
+        padding: 0 0 3.5rem space(12);
+        border-left: 1px solid colors.$color-border;
+
+        // dot on the rail
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0.55rem;
+          left: -8px;
+          width: 11px;
+          height: 11px;
+          border-radius: 50%;
+          border: 2px solid colors.$color-accent;
+        }
+      }
+    }
+
+    &Dates {
+      margin: 0;
+      padding-top: 0.35rem;
+      font-family: var(--font-mono), ui-monospace, monospace;
+      font-size: font('xs');
+      margin-bottom: space(8);
+    }
+
+    &Role {
+      margin-bottom: space(8);
+      color: colors.$color-accent;
+      font-family: var(--font-mono);
+      font-weight: 500;
+    }
+
+    &Summary {
+      margin-bottom: space(8);
+      max-width: 80ch;
+    }
+
+    &Tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: space(6);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+
+  &__timeline {
+    margin-top: space(8);
+    @include breakpoint('tablet') {
+      margin-top: space(12);
+    }
+    @include breakpoint('desktop') {
+      margin-top: space(14);      
+    }
+  }
+}

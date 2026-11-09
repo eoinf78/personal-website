@@ -1,0 +1,16 @@
+@use '../colors.scss';
+@use '../functions' as *;
+
+.Tag {
+  border: 1px solid colors.$color-border;
+  border-radius: space(8);
+  color: colors.$color-text;
+  font-size: font('xs');
+  padding: space(2) space(3);
+
+  &--highlighted {
+    border-color: colors.$color-accent;
+    color: colors.$color-accent;
+    cursor: pointer;
+  }
+}

@@ -37,6 +37,11 @@
     }
   }
 
+  &__body {
+    display: inline-block;
+    font-size: font('lead');
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -58,21 +63,16 @@
     }
   }
 
-  .Block.--has-bg + &:not(.--has-bg) {
-    margin-top: space(10);
-    @include breakpoint('tablet') {
-      margin-top: space(12);
-    }
-  }
-
-  .Block:not(.--has-bg) + & {
-    margin-top: space(10);
-    @include breakpoint('tablet') {
-      margin-top: space(12);
-    }
-  }
-
   .Heading {
-    margin-bottom: space(11);
+    &.--size-section {
+      margin-bottom: space(12);
+    }
+    &.--size-display {
+      margin-bottom: space(8);
+    }
+  }
+
+  span.--highlight {
+    color: colors.$color-accent;
   }
 }
