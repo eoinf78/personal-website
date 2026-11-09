@@ -26,6 +26,11 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.25rem 1.5rem;
+
+      a, button {
+        font-size: font('base');
+        font-weight: 500;
+      }
     }
   }
 

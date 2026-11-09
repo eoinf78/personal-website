@@ -71,6 +71,7 @@ main {
   min-height: 50vh;
 }
 
+button.--text,
 a {
   align-items: center;
   color: inherit;
@@ -98,12 +99,12 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  font-family: fonts.$font-body;
+  font-family: var(--font-body);
   font-weight: normal;
 }
 
 input {
-  font-family: fonts.$font-body;
+  font-family: var(--font-body);
 }
 
 picture img, img {

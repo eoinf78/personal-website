@@ -2,7 +2,9 @@
 @use '../functions' as *;
 
 .HeroBlock {
-  padding-top: space(14);
+  @include breakpoint('desktop') {
+    height: 80vh;
+  }
 
   .Block__container {
     align-items: center;
@@ -15,8 +17,6 @@
     z-index: 1;
 
     p {
-      display: inline-block;
-      font-size: font('lead');
       margin-top: space(11);
     }
   }
@@ -46,9 +46,5 @@
     font-family: var(--font-mono);
     font-size: font('xs');
     margin-bottom: space(4);
-  }
-
-  span.--highlight {
-    color: colors.$color-accent;
   }
 }

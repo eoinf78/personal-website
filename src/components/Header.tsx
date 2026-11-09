@@ -11,8 +11,9 @@ export const Header = (): ReactElement => {
       <nav className="Header__nav">
         <Link href="/" className="Header__logo">[Eoin Fanning]<span>_</span></Link>
         <div className="Header__navItems">
-          <AnchorLink href="#about">About</AnchorLink>
+          <AnchorLink>About</AnchorLink>          
           <AnchorLink href="#skills">Skills</AnchorLink>
+          <AnchorLink href="#work">Work</AnchorLink>
           <AnchorLink href="#contact-container">Contact</AnchorLink>
           <DownloadButton variant="outline" size="small" fileName="EoinFanning_CV"/>
         </div>
