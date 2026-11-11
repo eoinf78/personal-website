@@ -1,6 +1,6 @@
 import '@/scss/page.scss';
 import { BackToTop } from '@/components';
-import { HeroBlock, ContactBlock, SkillsBlock, WorkBlock } from '@/components/blocks';
+import { HeroBlock, ContactBlock, SkillsBlock, WorkBlock, AboutMeBlock } from '@/components/blocks';
 import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
 import { cacheLife } from "next/cache";
@@ -17,6 +17,7 @@ export default async function Home() {
     <Header/>
     <main className="main" id="top">
       <HeroBlock/>
+      <AboutMeBlock/>
       <SkillsBlock/>
       <WorkBlock/>
       <ContactBlock/>

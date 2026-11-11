@@ -1,0 +1,22 @@
+@use '../colors.scss';
+@use '../functions' as *;
+
+.Card {
+  background: colors.$color-surface;
+  border: 1px solid colors.$color-border;
+  border-radius: 14px;
+  padding: space(9);
+   
+  .Heading {
+    font-weight: 700;
+    margin-bottom: space(6);
+  }
+
+  span.--highlight {
+    color: colors.$color-accent;
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: font('xs');
+    margin-bottom: space(6);
+  }
+}

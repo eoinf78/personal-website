@@ -15,7 +15,7 @@ export const AnchorLink = ({ href, children, className }: AnchorLinkProps) => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    return <button className="--text" type="button" onClick={handleHomeClick} aria-label="Return to top">
+    return <button className={`${className ? `${className} ` : ''}--text`} type="button" onClick={handleHomeClick} aria-label="Return to top">
       {children}
     </button>
   }

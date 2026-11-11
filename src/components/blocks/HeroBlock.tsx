@@ -3,8 +3,11 @@
 import { Button, DownloadButton, LiquidSphere } from '@/components';
 import { AnimatedSection } from './AnimatedSection';
 import { MouseEvent } from 'react';
+import { useIsMobile } from '@/hooks';
 
 export const HeroBlock = () => {
+  const isMobile = useIsMobile();
+
   const handleContactClick = (event: MouseEvent) => {
     const target = document.getElementById('contact-container');
     if (!target) return;
@@ -29,9 +32,9 @@ export const HeroBlock = () => {
         </div>
         <span data-animate="content" className="HeroBlock__fileInfo">PDF · 190kb · updated October 2026</span>
       </div>
-      <div className="HeroBlock__sphere">
+      {!isMobile && <div className="HeroBlock__sphere">
         <LiquidSphere/>
-      </div>
+      </div>}
     </div>
   </AnimatedSection>
 }

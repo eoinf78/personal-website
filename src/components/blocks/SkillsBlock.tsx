@@ -23,7 +23,7 @@ export const SkillsBlock = () => {
       </div>
       <div className="SkillsBlock__tags" data-animate="content">
         <span>Also:</span>
-        {skills.map((skill, idx) => <span className="--tag" key={`skill${idx}`}>{skill}</span>)}
+        {skills.map((skill, idx) => <span className="Tag" key={`skill${idx}`}>{skill}</span>)}
       </div>
     </div>
   </AnimatedSection>

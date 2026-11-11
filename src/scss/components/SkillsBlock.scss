@@ -39,21 +39,13 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: space(5);
+    row-gap: space(8);
     margin-top: space(12);
 
-    span.--tag {
-      border: 1px solid colors.$color-border;
-      border-radius: space(8);
-      color: colors.$color-text;
-      font-size: font('xs');
-      padding: space(2) space(3);
-
-      &--highlighted {
-        border-color: colors.$color-accent;
-        color: colors.$color-accent;
-        cursor: pointer;
-      }
+    span:first-child {
+      color: colors.$color-accent;
+      font-family: var(--font-mono);
+      margin-right: space(6);
     }
   }
 }

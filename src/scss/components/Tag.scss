@@ -2,11 +2,16 @@
 @use '../functions' as *;
 
 .Tag {
-  border: 1px solid colors.$color-border;
-  border-radius: space(8);
+  border-right: 1px solid colors.$color-text-subtle;
   color: colors.$color-text;
   font-size: font('xs');
-  padding: space(2) space(3);
+  margin-right: space(6);
+  padding-right: space(6);
+
+  &:last-child {
+    border-right: none;
+    margin-right: 0;
+  }
 
   &--highlighted {
     border-color: colors.$color-accent;

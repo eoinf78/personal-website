@@ -6,9 +6,13 @@
   background-color: colors.$color-bg;
   padding: space(8);
 
-  &__logo {
+  &__logo.--text {
     color: colors.$color-text;
+    font-size: font('base');
     font-family: var(--font-mono);
+    font-weight: fonts.$font-weight-medium;
+    gap: 0;
+    padding: 0;
 
     span {
       color: colors.$color-accent;

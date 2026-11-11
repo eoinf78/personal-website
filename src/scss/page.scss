@@ -117,6 +117,10 @@ em {
   font-style: italic;
 }
 
+p + p {
+  margin-top: space(8);
+}
+
 p:empty {
   display: none;
 }

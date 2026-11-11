@@ -9,9 +9,9 @@ export const Header = (): ReactElement => {
   return <>
     <header className="Header">
       <nav className="Header__nav">
-        <Link href="/" className="Header__logo">[Eoin Fanning]<span>_</span></Link>
+        <AnchorLink className="Header__logo">[Eoin Fanning]<span>_</span></AnchorLink>
         <div className="Header__navItems">
-          <AnchorLink>About</AnchorLink>          
+          <AnchorLink href="#aboutme">About</AnchorLink>          
           <AnchorLink href="#skills">Skills</AnchorLink>
           <AnchorLink href="#work">Work</AnchorLink>
           <AnchorLink href="#contact-container">Contact</AnchorLink>

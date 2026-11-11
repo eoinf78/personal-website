@@ -9,10 +9,12 @@
   padding-top: space(10);
   padding-bottom: space(10);
   position: relative;
+  scroll-margin-top: 140px;
   width: 100%;
   @include breakpoint('tablet') {
     padding-top: space(14);
     padding-bottom: space(14);
+    scroll-margin-top: 65px;
   }
 
   &__actions {
